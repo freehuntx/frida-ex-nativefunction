@@ -1,0 +1,8 @@
+{
+  "name": "frida-ex-nativefunction",
+  "description": "Gives you a more powerful NativeFunction for frida.",
+  "author": "FreehuntX",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "index.js"
+}
