@@ -2,7 +2,12 @@
   "name": "frida-ex-nativefunction",
   "description": "Gives you a more powerful NativeFunction for frida.",
   "author": "FreehuntX",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
-  "main": "index.js"
+  "main": "index.js",
+  "homepage": "https://github.com/freehuntx/frida-ex-nativefunction#readme",
+  "repository": {
+    "type": "git",
+	"url": "https://github.com/freehuntx/frida-ex-nativefunction"
+  }
 }
