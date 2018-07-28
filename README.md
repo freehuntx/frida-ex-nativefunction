@@ -3,20 +3,29 @@ This module provides you with an extended NativeFunction class.
 It is meant to be used inside of a frida script.  
 See for example: [frida-compile](https://github.com/frida/frida-compile)
 
+
+
 ## Example
 ```
 const ExNativeFunction = require('frida-ex-nativefunction')
 
-const openPtr = Module.findExportByName('libc.so', 'open')
-const func = new ExNativeFunction(openPtr, 'int', ['pointer', 'int'])
+const openAddr = Module.findExportByName('libc.so', 'open')
+const open = new ExNativeFunction(openAddr, 'int', ['pointer', 'int'])
 
-// You can use the function as usual, but you can access some properties.
-// Example:
-func.address
-func.retType
-func.argTypes
-func.abi
+console.log(open.address)  // The provided openAddr
+console.log(open.retType)  // The provided return type
+console.log(open.argTypes) // The provided argument types
+console.log(open.abi)      // The provided abi
 
-// This is very useful when hooking functions,
-// so you dont have to define everything again.
+// Shorthand for Interceptor.attach
+const listener = open.intercept({
+  onEnter: function() {},
+  onLeave: function() {}
+})
+listener.detach() // You can use it like usual
+
+// Shorthand for Interceptor.replace
+open.replace((pathPtr, flags) => {
+  return open(pathPtr, flags)
+})
 ```

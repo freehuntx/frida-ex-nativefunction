@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "Interceptor": true,
+    "NativeCallback": true,
+    "NativeFunction": true
+  },
+  "rules": {
+    "no-console": "off",
+    "no-unused-vars": "warn",
+
+    "prettier/prettier": ["error", {
+      "semi": false,
+      "singleQuote": true
+    }]
+  }
+}
