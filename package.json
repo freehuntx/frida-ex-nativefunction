@@ -6,11 +6,15 @@
   "homepage": "https://github.com/freehuntx/frida-ex-nativefunction#readme",
   "repository": {
     "type": "git",
-	  "url": "https://github.com/freehuntx/frida-ex-nativefunction"
+    "url": "https://github.com/freehuntx/frida-ex-nativefunction"
   },
   "license": "MIT",
   "main": "index.js",
   "keywords": [
     "frida"
-  ]
+  ],
+  "dependencies": {
+    "@types/frida-gum": "^18.7.0"
+  },
+  "types": "index.d.ts"
 }
